@@ -1,7 +1,0 @@
-mklink /H "D:\htdocs\_project_ommu_module_inlis_sso\modules\inlis\LICENSE" "D:\htdocs\_project_ommu_module_inlis_sso\LICENSE"
-mklink /H "D:\htdocs\_project_ommu_module_inlis_sso\modules\sso\LICENSE" "D:\htdocs\_project_ommu_module_inlis_sso\LICENSE"
-
-mklink /H "D:\htdocs\_project_ommu_module_inlis_sso\modules\inlis\controllers\api\LICENSE" "D:\htdocs\_project_ommu_module_inlis_sso\LICENSE"
-mklink /H "D:\htdocs\_project_ommu_module_inlis_sso\modules\sso\controllers\api\LICENSE" "D:\htdocs\_project_ommu_module_inlis_sso\LICENSE"
-
-mklink /J "D:\htdocs\_project_ommu_module_inlis_sso\modules\sso\components\plugins\routeros" "D:\htdocs\_project_ommu_extension_routeros"

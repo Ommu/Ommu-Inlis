@@ -1,7 +1,0 @@
-ln -s "/Users/putrasudaryanto/htdocs/_project_ommu_module_inlis_sso/LICENSE" "/Users/putrasudaryanto/htdocs/_project_ommu_module_inlis_sso/modules/inlis/LICENSE"
-ln -s "/Users/putrasudaryanto/htdocs/_project_ommu_module_inlis_sso/LICENSE" "/Users/putrasudaryanto/htdocs/_project_ommu_module_inlis_sso/modules/sso/LICENSE"
-
-ln -s "/Users/putrasudaryanto/htdocs/_project_ommu_module_inlis_sso/LICENSE" "/Users/putrasudaryanto/htdocs/_project_ommu_module_inlis_sso/modules/inlis/controllers/api/LICENSE"
-ln -s "/Users/putrasudaryanto/htdocs/_project_ommu_module_inlis_sso/LICENSE" "/Users/putrasudaryanto/htdocs/_project_ommu_module_inlis_sso/modules/sso/controllers/api/LICENSE"
-
-ln -s "/Users/putrasudaryanto/htdocs/_project_ommu_extension_routeros" "/Users/putrasudaryanto/htdocs/_project_ommu_module_inlis_sso/modules/sso/components/plugins/routeros"
