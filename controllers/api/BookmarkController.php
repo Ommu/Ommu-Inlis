@@ -4,9 +4,8 @@
  * @var $this BookmarkController
  * @var $model InlisBookmarks
  * @var $form CActiveForm
- * version: 0.0.1
- * Reference start
  *
+ * Reference start
  * TOC :
  *	Index
  *	List
@@ -17,10 +16,10 @@
  *	performAjaxValidation
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
+ * @contact (+62)856-299-4114
  * @copyright Copyright (c) 2016 Ommu Platform (ommu.co)
  * @created date 3 April 2016, 14:18 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
- * @contect (+62)856-299-4114
  *
  *----------------------------------------------------------------------------------------------------------
  */
