@@ -49,7 +49,7 @@
 			),
 			array(
 				'name'=>'CreateDate',
-				'value'=>!in_array($model->CreateDate, array('0000-00-00 00:00:00','1970-01-01 00:00:00')) ? Utility::dateFormat($model->CreateDate, true) : '-',
+				'value'=>!in_array($model->CreateDate, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')) ? Utility::dateFormat($model->CreateDate, true) : '-',
 			),
 			array(
 				'name'=>'CreateTerminal',
@@ -63,7 +63,7 @@
 			),
 			array(
 				'name'=>'UpdateDate',
-				'value'=>!in_array($model->UpdateDate, array('0000-00-00 00:00:00','1970-01-01 00:00:00')) ? Utility::dateFormat($model->UpdateDate, true) : '-',
+				'value'=>!in_array($model->UpdateDate, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')) ? Utility::dateFormat($model->UpdateDate, true) : '-',
 			),
 			array(
 				'name'=>'UpdateTerminal',
