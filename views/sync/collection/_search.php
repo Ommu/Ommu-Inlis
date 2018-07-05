@@ -7,7 +7,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 29 March 2016, 10:02 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -26,102 +26,102 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('NoInduk'); ?><br/>
-			<?php echo $form->textField($model,'NoInduk',array('size'=>60,'maxlength'=>255)); ?>
+			<?php echo $form->textField($model,'NoInduk', array('size'=>60,'maxlength'=>255)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Title'); ?><br/>
-			<?php echo $form->textArea($model,'Title',array('rows'=>6, 'cols'=>50)); ?>
+			<?php echo $form->textArea($model,'Title', array('rows'=>6, 'cols'=>50)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('TitleAdded'); ?><br/>
-			<?php echo $form->textArea($model,'TitleAdded',array('rows'=>6, 'cols'=>50)); ?>
+			<?php echo $form->textArea($model,'TitleAdded', array('rows'=>6, 'cols'=>50)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Author'); ?><br/>
-			<?php echo $form->textArea($model,'Author',array('rows'=>6, 'cols'=>50)); ?>
+			<?php echo $form->textArea($model,'Author', array('rows'=>6, 'cols'=>50)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('AuthorAdded'); ?><br/>
-			<?php echo $form->textArea($model,'AuthorAdded',array('rows'=>6, 'cols'=>50)); ?>
+			<?php echo $form->textArea($model,'AuthorAdded', array('rows'=>6, 'cols'=>50)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Cooperation'); ?><br/>
-			<?php echo $form->textField($model,'Cooperation',array('size'=>60,'maxlength'=>200)); ?>
+			<?php echo $form->textField($model,'Cooperation', array('size'=>60,'maxlength'=>200)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('PublishLocation'); ?><br/>
-			<?php echo $form->textField($model,'PublishLocation',array('size'=>60,'maxlength'=>200)); ?>
+			<?php echo $form->textField($model,'PublishLocation', array('size'=>60,'maxlength'=>200)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Publisher'); ?><br/>
-			<?php echo $form->textArea($model,'Publisher',array('rows'=>6, 'cols'=>50)); ?>
+			<?php echo $form->textArea($model,'Publisher', array('rows'=>6, 'cols'=>50)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('PublishYear'); ?><br/>
-			<?php echo $form->textField($model,'PublishYear',array('size'=>60,'maxlength'=>200)); ?>
+			<?php echo $form->textField($model,'PublishYear', array('size'=>60,'maxlength'=>200)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('KalaTerbit'); ?><br/>
-			<?php echo $form->textField($model,'KalaTerbit',array('size'=>60,'maxlength'=>200)); ?>
+			<?php echo $form->textField($model,'KalaTerbit', array('size'=>60,'maxlength'=>200)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Edition'); ?><br/>
-			<?php echo $form->textField($model,'Edition',array('size'=>60,'maxlength'=>200)); ?>
+			<?php echo $form->textField($model,'Edition', array('size'=>60,'maxlength'=>200)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Class'); ?><br/>
-			<?php echo $form->textField($model,'Class',array('size'=>60,'maxlength'=>200)); ?>
+			<?php echo $form->textField($model,'Class', array('size'=>60,'maxlength'=>200)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('PhysicalDescription'); ?><br/>
-			<?php echo $form->textArea($model,'PhysicalDescription',array('rows'=>6, 'cols'=>50)); ?>
+			<?php echo $form->textArea($model,'PhysicalDescription', array('rows'=>6, 'cols'=>50)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Note'); ?><br/>
-			<?php echo $form->textArea($model,'Note',array('rows'=>6, 'cols'=>50)); ?>
+			<?php echo $form->textArea($model,'Note', array('rows'=>6, 'cols'=>50)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Currency'); ?><br/>
-			<?php echo $form->textField($model,'Currency',array('size'=>30,'maxlength'=>30)); ?>
+			<?php echo $form->textField($model,'Currency', array('size'=>30,'maxlength'=>30)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('ISBN'); ?><br/>
-			<?php echo $form->textField($model,'ISBN',array('size'=>60,'maxlength'=>2000)); ?>
+			<?php echo $form->textField($model,'ISBN', array('size'=>60,'maxlength'=>2000)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('MapScale'); ?><br/>
-			<?php echo $form->textField($model,'MapScale',array('size'=>60,'maxlength'=>200)); ?>
+			<?php echo $form->textField($model,'MapScale', array('size'=>60,'maxlength'=>200)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('MapNumber'); ?><br/>
-			<?php echo $form->textField($model,'MapNumber',array('size'=>60,'maxlength'=>200)); ?>
+			<?php echo $form->textField($model,'MapNumber', array('size'=>60,'maxlength'=>200)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('MapSubject'); ?><br/>
-			<?php echo $form->textField($model,'MapSubject',array('size'=>60,'maxlength'=>200)); ?>
+			<?php echo $form->textField($model,'MapSubject', array('size'=>60,'maxlength'=>200)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('RFID'); ?><br/>
-			<?php echo $form->textField($model,'RFID',array('size'=>60,'maxlength'=>255)); ?>
+			<?php echo $form->textField($model,'RFID', array('size'=>60,'maxlength'=>255)); ?>
 		</li>
 
 		<li>
@@ -191,27 +191,27 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('NomorBarcode'); ?><br/>
-			<?php echo $form->textField($model,'NomorBarcode',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->textField($model,'NomorBarcode', array('size'=>50,'maxlength'=>50)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Status'); ?><br/>
-			<?php echo $form->textField($model,'Status',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->textField($model,'Status', array('size'=>50,'maxlength'=>50)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Keterangan_Sumber'); ?><br/>
-			<?php echo $form->textField($model,'Keterangan_Sumber',array('size'=>60,'maxlength'=>200)); ?>
+			<?php echo $form->textField($model,'Keterangan_Sumber', array('size'=>60,'maxlength'=>200)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Penempatan'); ?><br/>
-			<?php echo $form->textField($model,'Penempatan',array('size'=>60,'maxlength'=>200)); ?>
+			<?php echo $form->textField($model,'Penempatan', array('size'=>60,'maxlength'=>200)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('CreateBy'); ?><br/>
-			<?php echo $form->textField($model,'CreateBy',array('size'=>60,'maxlength'=>100)); ?>
+			<?php echo $form->textField($model,'CreateBy', array('size'=>60,'maxlength'=>100)); ?>
 		</li>
 
 		<li>
@@ -221,12 +221,12 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('CreateTerminal'); ?><br/>
-			<?php echo $form->textField($model,'CreateTerminal',array('size'=>60,'maxlength'=>100)); ?>
+			<?php echo $form->textField($model,'CreateTerminal', array('size'=>60,'maxlength'=>100)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('UpdateBy'); ?><br/>
-			<?php echo $form->textField($model,'UpdateBy',array('size'=>60,'maxlength'=>100)); ?>
+			<?php echo $form->textField($model,'UpdateBy', array('size'=>60,'maxlength'=>100)); ?>
 		</li>
 
 		<li>
@@ -236,7 +236,7 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('UpdateTerminal'); ?><br/>
-			<?php echo $form->textField($model,'UpdateTerminal',array('size'=>60,'maxlength'=>100)); ?>
+			<?php echo $form->textField($model,'UpdateTerminal', array('size'=>60,'maxlength'=>100)); ?>
 		</li>
 
 		<li>
@@ -246,17 +246,17 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('SLA_REGISTER'); ?><br/>
-			<?php echo $form->textField($model,'SLA_REGISTER',array('size'=>45,'maxlength'=>45)); ?>
+			<?php echo $form->textField($model,'SLA_REGISTER', array('size'=>45,'maxlength'=>45)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('SENAYAN_ID'); ?><br/>
-			<?php echo $form->textField($model,'SENAYAN_ID',array('size'=>45,'maxlength'=>45)); ?>
+			<?php echo $form->textField($model,'SENAYAN_ID', array('size'=>45,'maxlength'=>45)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('NCIBookMan_ID'); ?><br/>
-			<?php echo $form->textField($model,'NCIBookMan_ID',array('size'=>45,'maxlength'=>45)); ?>
+			<?php echo $form->textField($model,'NCIBookMan_ID', array('size'=>45,'maxlength'=>45)); ?>
 		</li>
 
 		<li class="submit">

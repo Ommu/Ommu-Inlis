@@ -7,7 +7,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 29 March 2016, 11:07 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -26,17 +26,17 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('Code'); ?><br/>
-			<?php echo $form->textField($model,'Code',array('size'=>60,'maxlength'=>255)); ?>
+			<?php echo $form->textField($model,'Code', array('size'=>60,'maxlength'=>255)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Name'); ?><br/>
-			<?php echo $form->textField($model,'Name',array('size'=>60,'maxlength'=>255)); ?>
+			<?php echo $form->textField($model,'Name', array('size'=>60,'maxlength'=>255)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('Description'); ?><br/>
-			<?php echo $form->textField($model,'Description',array('size'=>60,'maxlength'=>255)); ?>
+			<?php echo $form->textField($model,'Description', array('size'=>60,'maxlength'=>255)); ?>
 		</li>
 
 		<li>
@@ -46,7 +46,7 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('CreateBy'); ?><br/>
-			<?php echo $form->textField($model,'CreateBy',array('size'=>60,'maxlength'=>100)); ?>
+			<?php echo $form->textField($model,'CreateBy', array('size'=>60,'maxlength'=>100)); ?>
 		</li>
 
 		<li>
@@ -56,12 +56,12 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('CreateTerminal'); ?><br/>
-			<?php echo $form->textField($model,'CreateTerminal',array('size'=>60,'maxlength'=>100)); ?>
+			<?php echo $form->textField($model,'CreateTerminal', array('size'=>60,'maxlength'=>100)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('UpdateBy'); ?><br/>
-			<?php echo $form->textField($model,'UpdateBy',array('size'=>60,'maxlength'=>100)); ?>
+			<?php echo $form->textField($model,'UpdateBy', array('size'=>60,'maxlength'=>100)); ?>
 		</li>
 
 		<li>
@@ -71,7 +71,7 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('UpdateTerminal'); ?><br/>
-			<?php echo $form->textField($model,'UpdateTerminal',array('size'=>60,'maxlength'=>100)); ?>
+			<?php echo $form->textField($model,'UpdateTerminal', array('size'=>60,'maxlength'=>100)); ?>
 		</li>
 
 		<li class="submit">

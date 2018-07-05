@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 1 April 2016, 09:14 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -138,22 +138,22 @@ class ViewInlisCatalogs extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 		
-		$criteria->compare('t.catalog_id',strtolower($this->catalog_id),true);
-		$criteria->compare('t.bookmarks',strtolower($this->bookmarks),true);
-		$criteria->compare('t.bookmark_unique',strtolower($this->bookmark_unique),true);
-		$criteria->compare('t.bookmark_all',strtolower($this->bookmark_all),true);
-		$criteria->compare('t.favourites',strtolower($this->favourites),true);
-		$criteria->compare('t.favourite_unique',strtolower($this->favourite_unique),true);
-		$criteria->compare('t.favourite_all',strtolower($this->favourite_all),true);
-		$criteria->compare('t.likes',strtolower($this->likes),true);
-		$criteria->compare('t.like_unique',strtolower($this->like_unique),true);
-		$criteria->compare('t.like_all',strtolower($this->like_all),true);
-		$criteria->compare('t.views',strtolower($this->views),true);
-		$criteria->compare('t.view_unique',strtolower($this->view_unique),true);
-		$criteria->compare('t.view_all',strtolower($this->view_all),true);
-		$criteria->compare('t.user_view',strtolower($this->user_view),true);
+		$criteria->compare('t.catalog_id', strtolower($this->catalog_id), true);
+		$criteria->compare('t.bookmarks', strtolower($this->bookmarks), true);
+		$criteria->compare('t.bookmark_unique', strtolower($this->bookmark_unique), true);
+		$criteria->compare('t.bookmark_all', strtolower($this->bookmark_all), true);
+		$criteria->compare('t.favourites', strtolower($this->favourites), true);
+		$criteria->compare('t.favourite_unique', strtolower($this->favourite_unique), true);
+		$criteria->compare('t.favourite_all', strtolower($this->favourite_all), true);
+		$criteria->compare('t.likes', strtolower($this->likes), true);
+		$criteria->compare('t.like_unique', strtolower($this->like_unique), true);
+		$criteria->compare('t.like_all', strtolower($this->like_all), true);
+		$criteria->compare('t.views', strtolower($this->views), true);
+		$criteria->compare('t.view_unique', strtolower($this->view_unique), true);
+		$criteria->compare('t.view_all', strtolower($this->view_all), true);
+		$criteria->compare('t.user_view', strtolower($this->user_view), true);
 
-		if(!isset($_GET['ViewInlisCatalogs_sort']))
+		if(!Yii::app()->getRequest()->getParam('ViewInlisCatalogs_sort'))
 			$criteria->order = 't.catalog_id DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -234,7 +234,7 @@ class ViewInlisCatalogs extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
 			if(count(explode(',', $column)) == 1)

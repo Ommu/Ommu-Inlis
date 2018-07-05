@@ -19,7 +19,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 29 March 2016, 15:15 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -127,7 +127,7 @@ class AdminController extends Controller
 		$this->pageTitle = Yii::t('phrase', 'Inlis Catalogs Manage');
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_manage',array(
+		$this->render('admin_manage', array(
 			'model'=>$model,
 			'columns' => $columns,
 		));
@@ -152,7 +152,7 @@ class AdminController extends Controller
 				echo $jsonError;
 
 			} else {
-				if(isset($_GET['enablesave']) && $_GET['enablesave'] == 1) {
+				if(Yii::app()->getRequest()->getParam('enablesave') == 1) {
 					if($model->save()) {
 						echo CJSON::encode(array(
 							'type' => 5,
@@ -175,7 +175,7 @@ class AdminController extends Controller
 		$this->pageTitle = Yii::t('phrase', 'Create Inlis Catalogs');
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_add',array(
+		$this->render('admin_add', array(
 			'model'=>$model,
 		));
 	}
@@ -200,7 +200,7 @@ class AdminController extends Controller
 				echo $jsonError;
 
 			} else {
-				if(isset($_GET['enablesave']) && $_GET['enablesave'] == 1) {
+				if(Yii::app()->getRequest()->getParam('enablesave') == 1) {
 					if($model->save()) {
 						echo CJSON::encode(array(
 							'type' => 5,
@@ -223,7 +223,7 @@ class AdminController extends Controller
 		$this->pageTitle = Yii::t('phrase', 'Update Inlis Catalogs');
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_edit',array(
+		$this->render('admin_edit', array(
 			'model'=>$model,
 		));
 	}
@@ -243,7 +243,7 @@ class AdminController extends Controller
 		$this->pageTitle = Yii::t('phrase', 'View Inlis Catalogs');
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_view',array(
+		$this->render('admin_view', array(
 			'model'=>$model,
 		));
 	}	

@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 11 April 2016, 03:24 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -128,32 +128,32 @@ class InlisSearchs extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.search_id',strtolower($this->search_id),true);
-		if(isset($_GET['type']) && $_GET['type'] == 'publish')
-			$criteria->compare('t.publish',1);
-		elseif(isset($_GET['type']) && $_GET['type'] == 'unpublish')
-			$criteria->compare('t.publish',0);
-		elseif(isset($_GET['type']) && $_GET['type'] == 'trash')
-			$criteria->compare('t.publish',2);
+		$criteria->compare('t.search_id', strtolower($this->search_id), true);
+		if(Yii::app()->getRequest()->getParam('type') == 'publish')
+			$criteria->compare('t.publish', 1);
+		elseif(Yii::app()->getRequest()->getParam('type') == 'unpublish')
+			$criteria->compare('t.publish', 0);
+		elseif(Yii::app()->getRequest()->getParam('type') == 'trash')
+			$criteria->compare('t.publish', 2);
 		else {
-			$criteria->addInCondition('t.publish',array(0,1));
-			$criteria->compare('t.publish',$this->publish);
+			$criteria->addInCondition('t.publish', array(0,1));
+			$criteria->compare('t.publish', $this->publish);
 		}
-		if(isset($_GET['user']))
-			$criteria->compare('t.user_id',$_GET['user']);
+		if(Yii::app()->getRequest()->getParam('user'))
+			$criteria->compare('t.user_id', Yii::app()->getRequest()->getParam('user'));
 		else
-			$criteria->compare('t.user_id',$this->user_id);
-		if(isset($_GET['device']))
-			$criteria->compare('t.device_id',$_GET['device']);
+			$criteria->compare('t.user_id', $this->user_id);
+		if(Yii::app()->getRequest()->getParam('device'))
+			$criteria->compare('t.device_id', Yii::app()->getRequest()->getParam('device'));
 		else
-			$criteria->compare('t.device_id',$this->device_id);
-		$criteria->compare('t.search_type',$this->search_type);
-		$criteria->compare('t.search_key',strtolower($this->search_key),true);
-		if($this->creation_date != null && !in_array($this->creation_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.creation_date)',date('Y-m-d', strtotime($this->creation_date)));
-		$criteria->compare('t.creation_ip',strtolower($this->creation_ip),true);
-		if($this->deleted_date != null && !in_array($this->deleted_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.deleted_date)',date('Y-m-d', strtotime($this->deleted_date)));
+			$criteria->compare('t.device_id', $this->device_id);
+		$criteria->compare('t.search_type', $this->search_type);
+		$criteria->compare('t.search_key', strtolower($this->search_key), true);
+		if($this->creation_date != null && !in_array($this->creation_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.creation_date)', date('Y-m-d', strtotime($this->creation_date)));
+		$criteria->compare('t.creation_ip', strtolower($this->creation_ip), true);
+		if($this->deleted_date != null && !in_array($this->deleted_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.deleted_date)', date('Y-m-d', strtotime($this->deleted_date)));
 		
 		// Custom Search
 		$criteria->with = array(
@@ -162,9 +162,9 @@ class InlisSearchs extends CActiveRecord
 				'select'=>'displayname',
 			),
 		);
-		$criteria->compare('user.displayname',strtolower($this->user_search), true);
+		$criteria->compare('user.displayname', strtolower($this->user_search), true);
 
-		if(!isset($_GET['InlisSearchs_sort']))
+		if(!Yii::app()->getRequest()->getParam('InlisSearchs_sort'))
 			$criteria->order = 't.search_id DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -254,7 +254,7 @@ class InlisSearchs extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -264,10 +264,10 @@ class InlisSearchs extends CActiveRecord
 				), true),
 			);
 			$this->defaultColumns[] = 'creation_ip';
-			if(!isset($_GET['type'])) {
+			if(!Yii::app()->getRequest()->getParam('type')) {
 				$this->defaultColumns[] = array(
 					'name' => 'publish',
-					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl("publish",array("id"=>$data->search_id)), $data->publish, 1)',
+					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl("publish", array("id"=>$data->search_id)), $data->publish, 1)',
 					'htmlOptions' => array(
 						'class' => 'center',
 					),
@@ -295,7 +295,7 @@ class InlisSearchs extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -314,7 +314,7 @@ class InlisSearchs extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
 			if(count(explode(',', $column)) == 1)

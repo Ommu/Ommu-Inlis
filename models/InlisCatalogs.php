@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 29 March 2016, 15:13 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -122,16 +122,16 @@ class InlisCatalogs extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.id',strtolower($this->id),true);
-		$criteria->compare('t.catalog_id',strtolower($this->catalog_id),true);
-		$criteria->compare('t.user_views',strtolower($this->user_views),true);
-		$criteria->compare('t.public_views',strtolower($this->public_views),true);
-		if($this->creation_date != null && !in_array($this->creation_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.creation_date)',date('Y-m-d', strtotime($this->creation_date)));
-		if(isset($_GET['creation']))
-			$criteria->compare('t.creation_id',$_GET['creation']);
+		$criteria->compare('t.id', strtolower($this->id), true);
+		$criteria->compare('t.catalog_id', strtolower($this->catalog_id), true);
+		$criteria->compare('t.user_views', strtolower($this->user_views), true);
+		$criteria->compare('t.public_views', strtolower($this->public_views), true);
+		if($this->creation_date != null && !in_array($this->creation_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.creation_date)', date('Y-m-d', strtotime($this->creation_date)));
+		if(Yii::app()->getRequest()->getParam('creation'))
+			$criteria->compare('t.creation_id', Yii::app()->getRequest()->getParam('creation'));
 		else
-			$criteria->compare('t.creation_id',$this->creation_id);
+			$criteria->compare('t.creation_id', $this->creation_id);
 		
 		// Custom Search
 		$criteria->with = array(
@@ -144,10 +144,10 @@ class InlisCatalogs extends CActiveRecord
 				'select'=>'displayname',
 			),
 		);
-		$criteria->compare('catalog.Title',strtolower($this->catalog_search), true);
-		$criteria->compare('creation.displayname',strtolower($this->creation_search), true);
+		$criteria->compare('catalog.Title', strtolower($this->catalog_search), true);
+		$criteria->compare('creation.displayname', strtolower($this->creation_search), true);
 
-		if(!isset($_GET['InlisCatalogs_sort']))
+		if(!Yii::app()->getRequest()->getParam('InlisCatalogs_sort'))
 			$criteria->order = 't.id DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -235,7 +235,7 @@ class InlisCatalogs extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -266,7 +266,7 @@ class InlisCatalogs extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
 			if(count(explode(',', $column)) == 1)

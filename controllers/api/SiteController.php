@@ -100,21 +100,21 @@ class SiteController extends ControllerApi
 			$criteria=new CDbCriteria;
 			$criteria->select = array('ID','Title','Author','Publisher','PublishLocation','PublishYear','Subject','ISBN','CallNumber','Worksheet_id');			
 			if($category == 'title')
-				$criteria->compare('t.Title',strtolower($keyword),true);
+				$criteria->compare('t.Title', strtolower($keyword), true);
 			else if($category == 'author')
-				$criteria->compare('t.Author',strtolower($keyword),true);
+				$criteria->compare('t.Author', strtolower($keyword), true);
 			else if($category == 'publisher')
-				$criteria->compare('t.Publisher',strtolower($keyword),true);
+				$criteria->compare('t.Publisher', strtolower($keyword), true);
 			else if($category == 'publishyear')
-				$criteria->compare('t.PublishYear',strtolower($keyword),true);
+				$criteria->compare('t.PublishYear', strtolower($keyword), true);
 			else if($category == 'subject')
-				$criteria->compare('t.Subject',strtolower($keyword),true);
+				$criteria->compare('t.Subject', strtolower($keyword), true);
 			else if($category == 'callnumber')
-				$criteria->compare('t.CallNumber',strtolower($keyword),true);
+				$criteria->compare('t.CallNumber', strtolower($keyword), true);
 			else if($category == 'bibid')
-				$criteria->compare('t.BIBID',strtolower($keyword),true);
+				$criteria->compare('t.BIBID', strtolower($keyword), true);
 			else if($category == 'isbn')
-				$criteria->compare('t.ISBN',strtolower($keyword),true);
+				$criteria->compare('t.ISBN', strtolower($keyword), true);
 			
 			if($worksheet != 0)
 				$criteria->compare('t.Worksheet_id',$worksheet);
@@ -190,14 +190,14 @@ class SiteController extends ControllerApi
 			
 			$criteria=new CDbCriteria;
 			$criteria->select = array('ID','Title','Author','Publisher','PublishLocation','PublishYear','Subject','ISBN','CallNumber','Worksheet_id');
-			$criteria->compare('t.Title',strtolower($title),true);
-			$criteria->compare('t.Author',strtolower($author),true);
-			$criteria->compare('t.Publisher',strtolower($publisher),true);
-			$criteria->compare('t.PublishYear',strtolower($publishyear),true);
-			$criteria->compare('t.Subject',strtolower($subject),true);
-			$criteria->compare('t.CallNumber',strtolower($callnumber),true);
-			$criteria->compare('t.BIBID',strtolower($bibid),true);
-			$criteria->compare('t.ISBN',strtolower($isbn),true);
+			$criteria->compare('t.Title', strtolower($title), true);
+			$criteria->compare('t.Author', strtolower($author), true);
+			$criteria->compare('t.Publisher', strtolower($publisher), true);
+			$criteria->compare('t.PublishYear', strtolower($publishyear), true);
+			$criteria->compare('t.Subject', strtolower($subject), true);
+			$criteria->compare('t.CallNumber', strtolower($callnumber), true);
+			$criteria->compare('t.BIBID', strtolower($bibid), true);
+			$criteria->compare('t.ISBN', strtolower($isbn), true);
 			$criteria->compare('t.IsOPAC',1);
 			$criteria->order = 't.ID DESC';
 

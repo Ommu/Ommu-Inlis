@@ -7,7 +7,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 17 May 2016, 17:24 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -26,27 +26,27 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('loans'); ?><br/>
-			<?php echo $form->textField($model,'loans',array('size'=>21,'maxlength'=>21)); ?>
+			<?php echo $form->textField($model,'loans', array('size'=>21,'maxlength'=>21)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('loan_collection'); ?><br/>
-			<?php echo $form->textField($model,'loan_collection',array('size'=>32,'maxlength'=>32)); ?>
+			<?php echo $form->textField($model,'loan_collection', array('size'=>32,'maxlength'=>32)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('returns'); ?><br/>
-			<?php echo $form->textField($model,'returns',array('size'=>23,'maxlength'=>23)); ?>
+			<?php echo $form->textField($model,'returns', array('size'=>23,'maxlength'=>23)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('return_late'); ?><br/>
-			<?php echo $form->textField($model,'return_late',array('size'=>23,'maxlength'=>23)); ?>
+			<?php echo $form->textField($model,'return_late', array('size'=>23,'maxlength'=>23)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('return_collection'); ?><br/>
-			<?php echo $form->textField($model,'return_collection',array('size'=>32,'maxlength'=>32)); ?>
+			<?php echo $form->textField($model,'return_collection', array('size'=>32,'maxlength'=>32)); ?>
 		</li>
 
 		<li class="submit">

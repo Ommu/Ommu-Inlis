@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 16 May 2016, 14:37 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -112,11 +112,11 @@ class ViewInlisSyncCollections extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		if($this->date_key != null && !in_array($this->date_key, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.date_key)',date('Y-m-d', strtotime($this->date_key)));
-		$criteria->compare('t.collections',strtolower($this->collections),true);
+		if($this->date_key != null && !in_array($this->date_key, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.date_key)', date('Y-m-d', strtotime($this->date_key)));
+		$criteria->compare('t.collections', strtolower($this->collections), true);
 
-		if(!isset($_GET['ViewInlisSyncCollections_sort']))
+		if(!Yii::app()->getRequest()->getParam('ViewInlisSyncCollections_sort'))
 			$criteria->order = 't.date_key DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -175,7 +175,7 @@ class ViewInlisSyncCollections extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -198,7 +198,7 @@ class ViewInlisSyncCollections extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
 			if(count(explode(',', $column)) == 1)

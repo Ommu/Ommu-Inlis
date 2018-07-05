@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 27 April 2016, 12:00 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -123,17 +123,17 @@ class InlisSettings extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.id',$this->id);
-		$criteria->compare('t.license',strtolower($this->license),true);
-		$criteria->compare('t.permission',$this->permission);
-		$criteria->compare('t.meta_keyword',strtolower($this->meta_keyword),true);
-		$criteria->compare('t.meta_description',strtolower($this->meta_description),true);
-		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.modified_date)',date('Y-m-d', strtotime($this->modified_date)));
-		if(isset($_GET['modified']))
-			$criteria->compare('t.modified_id',$_GET['modified']);
+		$criteria->compare('t.id', $this->id);
+		$criteria->compare('t.license', strtolower($this->license), true);
+		$criteria->compare('t.permission', $this->permission);
+		$criteria->compare('t.meta_keyword', strtolower($this->meta_keyword), true);
+		$criteria->compare('t.meta_description', strtolower($this->meta_description), true);
+		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.modified_date)', date('Y-m-d', strtotime($this->modified_date)));
+		if(Yii::app()->getRequest()->getParam('modified'))
+			$criteria->compare('t.modified_id', Yii::app()->getRequest()->getParam('modified'));
 		else
-			$criteria->compare('t.modified_id',$this->modified_id);
+			$criteria->compare('t.modified_id', $this->modified_id);
 		
 		// Custom Search
 		$criteria->with = array(
@@ -142,10 +142,10 @@ class InlisSettings extends CActiveRecord
 				'select'=>'displayname',
 			),
 		);
-		$criteria->compare('modified_relation.displayname',strtolower($this->modified_search), true);
+		$criteria->compare('modified_relation.displayname', strtolower($this->modified_search), true);
 
 
-		if(!isset($_GET['InlisSettings_sort']))
+		if(!Yii::app()->getRequest()->getParam('InlisSettings_sort'))
 			$criteria->order = 't.id DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -216,7 +216,7 @@ class InlisSettings extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -239,7 +239,7 @@ class InlisSettings extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
 			if(count(explode(',', $column)) == 1)
@@ -251,33 +251,6 @@ class InlisSettings extends CActiveRecord
 			$model = self::model()->findByPk($id);
 			return $model;
 		}
-	}
-
-	/**
-	 * get Module License
-	 */
-	public static function getLicense($source='1234567890', $length=16, $char=4)
-	{
-		$mod = $length%$char;
-		if($mod == 0)
-			$sep = ($length/$char);
-		else
-			$sep = (int)($length/$char)+1;
-		
-		$sourceLength = strlen($source);
-		$random = '';
-		for ($i = 0; $i < $length; $i++)
-			$random .= $source[rand(0, $sourceLength - 1)];
-		
-		$license = '';
-		for ($i = 0; $i < $sep; $i++) {
-			if($i != $sep-1)
-				$license .= substr($random,($i*$char),$char).'-';
-			else
-				$license .= substr($random,($i*$char),$char);
-		}
-
-		return $license;
 	}
 
 	/**

@@ -7,7 +7,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 17 May 2016, 17:25 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -26,7 +26,7 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('collections'); ?><br/>
-			<?php echo $form->textField($model,'collections',array('size'=>21,'maxlength'=>21)); ?>
+			<?php echo $form->textField($model,'collections', array('size'=>21,'maxlength'=>21)); ?>
 		</li>
 
 		<li class="submit">

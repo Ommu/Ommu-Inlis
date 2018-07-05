@@ -7,7 +7,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 29 March 2016, 15:15 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -21,12 +21,12 @@
 	<ul>
 		<li>
 			<?php echo $model->getAttributeLabel('id'); ?><br/>
-			<?php echo $form->textField($model,'id',array('size'=>11,'maxlength'=>11)); ?>
+			<?php echo $form->textField($model,'id', array('size'=>11,'maxlength'=>11)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('catalog_id'); ?><br/>
-			<?php echo $form->textField($model,'catalog_id',array('size'=>11,'maxlength'=>11)); ?>
+			<?php echo $form->textField($model,'catalog_id', array('size'=>11,'maxlength'=>11)); ?>
 		</li>
 
 		<li>
@@ -36,7 +36,7 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('creation_id'); ?><br/>
-			<?php echo $form->textField($model,'creation_id',array('size'=>10,'maxlength'=>10)); ?>
+			<?php echo $form->textField($model,'creation_id', array('size'=>10,'maxlength'=>10)); ?>
 		</li>
 
 		<li class="submit">

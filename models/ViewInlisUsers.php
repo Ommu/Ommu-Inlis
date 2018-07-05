@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 1 April 2016, 09:14 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -128,18 +128,18 @@ class ViewInlisUsers extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.user_id',$this->user_id);
-		$criteria->compare('t.bookmarks',strtolower($this->bookmarks),true);
-		$criteria->compare('t.bookmark_all',strtolower($this->bookmark_all),true);
-		$criteria->compare('t.favourites',strtolower($this->favourites),true);
-		$criteria->compare('t.favourite_all',strtolower($this->favourite_all),true);
-		$criteria->compare('t.likes',strtolower($this->likes),true);
-		$criteria->compare('t.like_all',strtolower($this->like_all),true);
-		$criteria->compare('t.views',strtolower($this->views),true);
-		$criteria->compare('t.view_all',strtolower($this->view_all),true);
-		$criteria->compare('t.catalog_view',strtolower($this->catalog_view),true);
+		$criteria->compare('t.user_id', $this->user_id);
+		$criteria->compare('t.bookmarks', strtolower($this->bookmarks), true);
+		$criteria->compare('t.bookmark_all', strtolower($this->bookmark_all), true);
+		$criteria->compare('t.favourites', strtolower($this->favourites), true);
+		$criteria->compare('t.favourite_all', strtolower($this->favourite_all), true);
+		$criteria->compare('t.likes', strtolower($this->likes), true);
+		$criteria->compare('t.like_all', strtolower($this->like_all), true);
+		$criteria->compare('t.views', strtolower($this->views), true);
+		$criteria->compare('t.view_all', strtolower($this->view_all), true);
+		$criteria->compare('t.catalog_view', strtolower($this->catalog_view), true);
 
-		if(!isset($_GET['ViewInlisUsers_sort']))
+		if(!Yii::app()->getRequest()->getParam('ViewInlisUsers_sort'))
 			$criteria->order = 't.user_id DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -212,7 +212,7 @@ class ViewInlisUsers extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
 			if(count(explode(',', $column)) == 1)

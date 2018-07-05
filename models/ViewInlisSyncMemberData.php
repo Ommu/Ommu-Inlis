@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 8 August 2016, 12:28 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -118,12 +118,12 @@ class ViewInlisSyncMemberData extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.ID',$this->ID);
-		$criteria->compare('t.MemberNo',strtolower($this->MemberNo),true);
-		$criteria->compare('t.token_salt',strtolower($this->token_salt),true);
-		$criteria->compare('t.token_generate',strtolower($this->token_generate),true);
+		$criteria->compare('t.ID', $this->ID);
+		$criteria->compare('t.MemberNo', strtolower($this->MemberNo), true);
+		$criteria->compare('t.token_salt', strtolower($this->token_salt), true);
+		$criteria->compare('t.token_generate', strtolower($this->token_generate), true);
 
-		if(!isset($_GET['ViewInlisSyncMemberData_sort']))
+		if(!Yii::app()->getRequest()->getParam('ViewInlisSyncMemberData_sort'))
 			$criteria->order = 't.ID DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -184,7 +184,7 @@ class ViewInlisSyncMemberData extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
 			if(count(explode(',', $column)) == 1)

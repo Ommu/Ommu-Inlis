@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 16 May 2016, 14:37 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -125,17 +125,17 @@ class ViewInlisSyncMembers extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		if($this->date_key != null && !in_array($this->date_key, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.date_key)',date('Y-m-d', strtotime($this->date_key)));
-		$criteria->compare('t.members',strtolower($this->members),true);
-		$criteria->compare('t.member_siswa',strtolower($this->member_siswa),true);
-		$criteria->compare('t.member_pelajar',strtolower($this->member_pelajar),true);
-		$criteria->compare('t.member_mahasiswa',strtolower($this->member_mahasiswa),true);
-		$criteria->compare('t.member_karyawan',strtolower($this->member_karyawan),true);
-		$criteria->compare('t.member_pegawai',strtolower($this->member_pegawai),true);
-		$criteria->compare('t.member_umum',strtolower($this->member_umum),true);
+		if($this->date_key != null && !in_array($this->date_key, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.date_key)', date('Y-m-d', strtotime($this->date_key)));
+		$criteria->compare('t.members', strtolower($this->members), true);
+		$criteria->compare('t.member_siswa', strtolower($this->member_siswa), true);
+		$criteria->compare('t.member_pelajar', strtolower($this->member_pelajar), true);
+		$criteria->compare('t.member_mahasiswa', strtolower($this->member_mahasiswa), true);
+		$criteria->compare('t.member_karyawan', strtolower($this->member_karyawan), true);
+		$criteria->compare('t.member_pegawai', strtolower($this->member_pegawai), true);
+		$criteria->compare('t.member_umum', strtolower($this->member_umum), true);
 
-		if(!isset($_GET['ViewInlisSyncMembers_sort']))
+		if(!Yii::app()->getRequest()->getParam('ViewInlisSyncMembers_sort'))
 			$criteria->order = 't.date_key DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -200,7 +200,7 @@ class ViewInlisSyncMembers extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -247,7 +247,7 @@ class ViewInlisSyncMembers extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
 			if(count(explode(',', $column)) == 1)

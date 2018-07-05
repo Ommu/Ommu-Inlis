@@ -7,7 +7,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2016 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 29 March 2016, 15:15 WIB
  * @link https://github.com/ommu/ommu-inlis-sso
  *
@@ -31,7 +31,7 @@
 		<div class="clearfix">
 			<?php echo $form->labelEx($model,'catalog_id'); ?>
 			<div class="desc">
-				<?php echo $form->textField($model,'catalog_id',array('maxlength'=>11)); ?>
+				<?php echo $form->textField($model,'catalog_id', array('maxlength'=>11)); ?>
 				<?php echo $form->error($model,'catalog_id'); ?>
 				<?php /*<div class="small-px silent"></div>*/?>
 			</div>
@@ -40,7 +40,7 @@
 	</fieldset>
 </div>
 <div class="dialog-submit">
-	<?php echo CHtml::submitButton($model->isNewRecord ? Yii::t('phrase', 'Create') : Yii::t('phrase', 'Save') ,array('onclick' => 'setEnableSave()')); ?>
+	<?php echo CHtml::submitButton($model->isNewRecord ? Yii::t('phrase', 'Create') : Yii::t('phrase', 'Save') , array('onclick' => 'setEnableSave()')); ?>
 	<?php echo CHtml::button(Yii::t('phrase', 'Cancel'), array('id'=>'closed')); ?>
 </div>
 <?php $this->endWidget(); ?>
