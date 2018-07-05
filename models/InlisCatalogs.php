@@ -31,6 +31,8 @@
  */
 class InlisCatalogs extends CActiveRecord
 {
+	use UtilityTrait;
+
 	public $defaultColumns = array();
 	
 	// Variable Search
@@ -254,7 +256,7 @@ class InlisCatalogs extends CActiveRecord
 	public static function getShareUrl($id, $t=null)
 	{
 		if($t != null && $t != '' && $t != '-')
-			return Utility::getProtocol().'://'.Yii::app()->request->serverName.Yii::app()->controller->createUrl('site/detail', array('id'=>$id, 't'=>Utility::getUrlTitle($t)));
+			return Utility::getProtocol().'://'.Yii::app()->request->serverName.Yii::app()->controller->createUrl('site/detail', array('id'=>$id, 't'=>$this->urlTitle($t)));
 		else
 			return Utility::getProtocol().'://'.Yii::app()->request->serverName.Yii::app()->controller->createUrl('site/detail', array('id'=>$id));
 			
