@@ -70,9 +70,10 @@
 				'id'=>'view-inlis-sync-collectionloans-grid',
 				'dataProvider'=>$model->search(),
 				'filter'=>$model,
-				'afterAjaxUpdate' => 'reinstallDatePicker',
-				'columns' => $columnData,
-				'pager' => array('header' => ''),
+				'afterAjaxUpdate'=>'reinstallDatePicker',
+				'columns'=>$columnData,
+				'template'=>Yii::app()->params['grid-view']['gridTemplate'],
+				'pager'=>array('header'=>''),
 			));
 		?>
 		<?php //end.Grid Item ?>
