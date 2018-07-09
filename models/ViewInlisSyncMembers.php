@@ -33,6 +33,8 @@
  */
 class ViewInlisSyncMembers extends CActiveRecord
 {
+	use GridViewTrait;
+
 	public $defaultColumns = array();
 
 	/**
@@ -189,25 +191,7 @@ class ViewInlisSyncMembers extends CActiveRecord
 			$this->defaultColumns[] = array(
 				'name' => 'date_key',
 				'value' => 'Utility::dateFormat($data->date_key)',
-				'filter' => Yii::app()->controller->widget('application.libraries.core.components.system.CJuiDatePicker', array(
-					'model'=>$this,
-					'attribute'=>'date_key',
-					'language' => 'en',
-					'i18nScriptFile' => 'jquery-ui-i18n.min.js',
-					//'mode'=>'datetime',
-					'htmlOptions' => array(
-						'id' => 'date_key_filter',
-					),
-					'options'=>array(
-						'showOn' => 'focus',
-						'dateFormat' => 'yy-mm-dd',
-						'showOtherMonths' => true,
-						'selectOtherMonths' => true,
-						'changeMonth' => true,
-						'changeYear' => true,
-						'showButtonPanel' => true,
-					),
-				), true),
+				'filter' => $this->filterDatepicker($this, 'date_key'),
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'members',
