@@ -165,7 +165,7 @@ class ViewInlisSyncCatalogs extends CActiveRecord
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'date_key',
-				'value' => 'Utility::dateFormat($data->date_key)',
+				'value' => 'Yii::app()->dateFormatter->formatDateTime($data->date_key, \'medium\', false)',
 				'filter' => $this->filterDatepicker($this, 'date_key'),
 			);
 			$this->defaultColumns[] = array(

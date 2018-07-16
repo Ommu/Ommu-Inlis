@@ -243,7 +243,7 @@ class InlisViews extends CActiveRecord
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'creation_date',
-				'value' => 'Utility::dateFormat($data->creation_date)',
+				'value' => 'Yii::app()->dateFormatter->formatDateTime($data->creation_date, \'medium\', false)',
 				'htmlOptions' => array(
 					'class' => 'center',
 				),
@@ -263,7 +263,7 @@ class InlisViews extends CActiveRecord
 			}
 			$this->defaultColumns[] = array(
 				'name' => 'deleted_date',
-				'value' => '!in_array($data->deleted_date, array("0000-00-00 00:00:00","1970-01-01 00:00:00")) ? Utility::dateFormat($data->deleted_date) : "-"',	
+				'value' => '!in_array($data->deleted_date, array("0000-00-00 00:00:00","1970-01-01 00:00:00")) ? Yii::app()->dateFormatter->formatDateTime($data->deleted_date, \'medium\', false) : "-"',	
 				'htmlOptions' => array(
 					'class' => 'center',
 				),
