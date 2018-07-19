@@ -108,7 +108,7 @@ class CollectionController extends Controller
 	public function actionManage() 
 	{
 		$model=new ViewInlisSyncCollections('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['ViewInlisSyncCollections'])) {
 			$model->attributes=$_GET['ViewInlisSyncCollections'];
 		}

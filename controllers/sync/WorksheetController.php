@@ -108,7 +108,7 @@ class WorksheetController extends Controller
 	public function actionManage() 
 	{
 		$model=new SyncWorksheets('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['SyncWorksheets'])) {
 			$model->attributes=$_GET['SyncWorksheets'];
 		}

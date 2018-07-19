@@ -108,7 +108,7 @@ class CatalogController extends Controller
 	public function actionManage() 
 	{
 		$model=new SyncCatalogs('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['SyncCatalogs'])) {
 			$model->attributes=$_GET['SyncCatalogs'];
 		}

@@ -108,7 +108,7 @@ class WorksheetsubController extends Controller
 	public function actionManage() 
 	{
 		$model=new SyncWorksheetSub('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['SyncWorksheetSub'])) {
 			$model->attributes=$_GET['SyncWorksheetSub'];
 		}

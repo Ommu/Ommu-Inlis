@@ -108,7 +108,7 @@ class ViewController extends Controller
 	public function actionManage() 
 	{
 		$model=new InlisViews('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['InlisViews'])) {
 			$model->attributes=$_GET['InlisViews'];
 		}

@@ -108,7 +108,7 @@ class LocationController extends Controller
 	public function actionManage() 
 	{
 		$model=new SyncLocations('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['SyncLocations'])) {
 			$model->attributes=$_GET['SyncLocations'];
 		}

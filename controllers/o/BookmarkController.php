@@ -108,7 +108,7 @@ class BookmarkController extends Controller
 	public function actionManage() 
 	{
 		$model=new InlisBookmarks('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['InlisBookmarks'])) {
 			$model->attributes=$_GET['InlisBookmarks'];
 		}

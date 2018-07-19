@@ -108,7 +108,7 @@ class MemberController extends Controller
 	public function actionManage() 
 	{
 		$model=new ViewInlisSyncMembers('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['ViewInlisSyncMembers'])) {
 			$model->attributes=$_GET['ViewInlisSyncMembers'];
 		}

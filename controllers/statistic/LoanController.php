@@ -108,7 +108,7 @@ class LoanController extends Controller
 	public function actionManage() 
 	{
 		$model=new ViewInlisSyncCollectionloans('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['ViewInlisSyncCollectionloans'])) {
 			$model->attributes=$_GET['ViewInlisSyncCollectionloans'];
 		}

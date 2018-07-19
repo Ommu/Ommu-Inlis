@@ -108,7 +108,7 @@ class FavouriteController extends Controller
 	public function actionManage() 
 	{
 		$model=new InlisFavourites('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['InlisFavourites'])) {
 			$model->attributes=$_GET['InlisFavourites'];
 		}

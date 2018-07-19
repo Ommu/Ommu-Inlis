@@ -108,7 +108,7 @@ class CheckpointController extends Controller
 	public function actionManage() 
 	{
 		$model=new ViewInlisSyncCheckpoints('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['ViewInlisSyncCheckpoints'])) {
 			$model->attributes=$_GET['ViewInlisSyncCheckpoints'];
 		}
