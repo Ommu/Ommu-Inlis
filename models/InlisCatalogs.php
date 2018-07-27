@@ -139,12 +139,12 @@ class InlisCatalogs extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'catalog' => array(
-				'alias'=>'catalog',
-				'select'=>'Title',
+				'alias' => 'catalog',
+				'select' => 'Title',
 			),
 			'creation' => array(
-				'alias'=>'creation',
-				'select'=>'displayname',
+				'alias' => 'creation',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('catalog.Title', strtolower($this->catalog_search), true);

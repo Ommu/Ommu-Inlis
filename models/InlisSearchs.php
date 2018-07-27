@@ -160,8 +160,8 @@ class InlisSearchs extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'user' => array(
-				'alias'=>'user',
-				'select'=>'displayname',
+				'alias' => 'user',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('user.displayname', strtolower($this->user_search), true);
@@ -233,7 +233,7 @@ class InlisSearchs extends CActiveRecord
 			$this->defaultColumns[] = array(
 				'name' => 'search_type',
 				'value' => '$data->search_type == 0 ? Yii::t("Simple", "Simple") : Yii::t("Advance", "Advance")',
-				'filter'=>array(
+				'filter' =>array(
 					0=>Yii::t('Simple', 'Simple'),
 					1=>Yii::t('Advance', 'Advance'),
 				),

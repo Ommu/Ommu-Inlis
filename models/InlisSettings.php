@@ -140,8 +140,8 @@ class InlisSettings extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'modified_relation' => array(
-				'alias'=>'modified_relation',
-				'select'=>'displayname',
+				'alias' => 'modified_relation',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('modified_relation.displayname', strtolower($this->modified_search), true);

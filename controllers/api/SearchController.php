@@ -93,7 +93,7 @@ class SearchController extends ControllerApi
 			$criteria=new CDbCriteria;
 			$criteria->with = array(
 				'user.view' => array(
-					'alias'=>'view',
+					'alias' => 'view',
 				),
 			);
 			$criteria->select = array('t.search_id','t.search_type','t.search_key');

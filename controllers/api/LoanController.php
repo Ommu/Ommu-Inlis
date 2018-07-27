@@ -96,7 +96,7 @@ class LoanController extends ControllerApi
 			$criteria->together = true;
 			$criteria->with = array(
 				'collection' => array(
-					'alias'=>'collection',
+					'alias' => 'collection',
 				),
 			);
 			$criteria->select = array('Collection_id, collection.Catalog_id as Catalog_id','COUNT(CollectionLoan_id) as loans');

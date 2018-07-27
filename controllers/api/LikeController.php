@@ -93,7 +93,7 @@ class LikeController extends ControllerApi
 			$criteria=new CDbCriteria;
 			$criteria->with = array(
 				'user.view' => array(
-					'alias'=>'view',
+					'alias' => 'view',
 				),
 			);
 			$criteria->select = array('t.catalog_id','t.creation_date');
@@ -211,7 +211,7 @@ class LikeController extends ControllerApi
 			$criteria=new CDbCriteria;
 			$criteria->with = array(
 				'user.view' => array(
-					'alias'=>'view',
+					'alias' => 'view',
 				),
 			);
 			$criteria->compare('t.publish',1);

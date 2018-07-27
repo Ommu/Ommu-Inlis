@@ -163,12 +163,12 @@ class InlisLikes extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'catalog' => array(
-				'alias'=>'catalog',
-				'select'=>'Title',
+				'alias' => 'catalog',
+				'select' => 'Title',
 			),
 			'user' => array(
-				'alias'=>'user',
-				'select'=>'displayname',
+				'alias' => 'user',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('catalog.Title', strtolower($this->catalog_search), true);
