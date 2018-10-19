@@ -195,31 +195,31 @@ class ViewInlisSyncMembers extends CActiveRecord
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'members',
-				'value' => '$data->members != null ? $data->members : "-"',
+				'value' => '$data->members != null ? $data->members : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'member_siswa',
-				'value' => '$data->member_siswa != null ? $data->member_siswa : "-"',
+				'value' => '$data->member_siswa != null ? $data->member_siswa : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'member_pelajar',
-				'value' => '$data->member_pelajar != null ? $data->member_pelajar : "-"',
+				'value' => '$data->member_pelajar != null ? $data->member_pelajar : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'member_mahasiswa',
-				'value' => '$data->member_mahasiswa != null ? $data->member_mahasiswa : "-"',
+				'value' => '$data->member_mahasiswa != null ? $data->member_mahasiswa : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'member_karyawan',
-				'value' => '$data->member_karyawan != null ? $data->member_karyawan : "-"',
+				'value' => '$data->member_karyawan != null ? $data->member_karyawan : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'member_pegawai',
-				'value' => '$data->member_pegawai != null ? $data->member_pegawai : "-"',
+				'value' => '$data->member_pegawai != null ? $data->member_pegawai : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'member_umum',
-				'value' => '$data->member_umum != null ? $data->member_umum : "-"',
+				'value' => '$data->member_umum != null ? $data->member_umum : \'-\'',
 			);
 		}
 		parent::afterConstruct();

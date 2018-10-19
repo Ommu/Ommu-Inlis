@@ -170,7 +170,7 @@ class ViewInlisSyncCatalogs extends CActiveRecord
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'catalogs',
-				'value' => '$data->catalogs != null ? $data->catalogs : "-"',
+				'value' => '$data->catalogs != null ? $data->catalogs : \'-\'',
 			);
 		}
 		parent::afterConstruct();

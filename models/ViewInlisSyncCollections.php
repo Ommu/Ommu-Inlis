@@ -170,7 +170,7 @@ class ViewInlisSyncCollections extends CActiveRecord
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'collections',
-				'value' => '$data->collections != null ? $data->collections : "-"',
+				'value' => '$data->collections != null ? $data->collections : \'-\'',
 			);
 		}
 		parent::afterConstruct();

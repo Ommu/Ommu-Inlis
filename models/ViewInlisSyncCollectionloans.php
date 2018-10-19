@@ -188,23 +188,23 @@ class ViewInlisSyncCollectionloans extends CActiveRecord
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'loans',
-				'value' => '$data->loans != null ? $data->loans : "-"',
+				'value' => '$data->loans != null ? $data->loans : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'loan_collection',
-				'value' => '$data->loan_collection != null ? $data->loan_collection : "-"',
+				'value' => '$data->loan_collection != null ? $data->loan_collection : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'returns',
-				'value' => '$data->returns != null ? $data->returns : "-"',
+				'value' => '$data->returns != null ? $data->returns : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'return_late',
-				'value' => '$data->return_late != null ? $data->return_late : "-"',
+				'value' => '$data->return_late != null ? $data->return_late : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'return_collection',
-				'value' => '$data->return_collection != null ? $data->return_collection : "-"',
+				'value' => '$data->return_collection != null ? $data->return_collection : \'-\'',
 			);
 		}
 		parent::afterConstruct();

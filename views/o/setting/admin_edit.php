@@ -16,7 +16,7 @@
 	$this->breadcrumbs=array(
 		'Inlis Settings'=>array('manage'),
 		$model->id=>array('view','id'=>$model->id),
-		'Update',
+		Yii::t('phrase', 'Update'),
 	);
 ?>
 

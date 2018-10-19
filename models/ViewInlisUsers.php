@@ -99,7 +99,7 @@ class ViewInlisUsers extends CActiveRecord
 		return array(
 			'user_id' => Yii::t('attribute', 'User'),
 			'bookmarks' => Yii::t('attribute', 'Bookmarks'),
-			'bookmark_all' => Yii::t('attribute', 'Bookmark All'),	
+			'bookmark_all' => Yii::t('attribute', 'Bookmark All'),
 			'favourites' => Yii::t('attribute', 'Favourites'),
 			'favourite_all' => Yii::t('attribute', 'Favourite All'),
 			'likes' => Yii::t('attribute', 'Likes'),

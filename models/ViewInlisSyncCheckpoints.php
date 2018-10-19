@@ -179,15 +179,15 @@ class ViewInlisSyncCheckpoints extends CActiveRecord
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'checkpoints',
-				'value' => '$data->checkpoints != null ? $data->checkpoints : "-"',
+				'value' => '$data->checkpoints != null ? $data->checkpoints : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'checkpoint_member',
-				'value' => '$data->checkpoint_member != null ? $data->checkpoint_member : "-"',
+				'value' => '$data->checkpoint_member != null ? $data->checkpoint_member : \'-\'',
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'checkpoint_non_member',
-				'value' => '$data->checkpoint_non_member != null ? $data->checkpoint_non_member : "-"',
+				'value' => '$data->checkpoint_non_member != null ? $data->checkpoint_non_member : \'-\'',
 			);
 		}
 		parent::afterConstruct();

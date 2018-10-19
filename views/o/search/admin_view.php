@@ -35,7 +35,7 @@ if(Yii::app()->user->hasFlash('success'))
 		),
 		array(
 			'name'=>'publish',
-			'value'=>$model->publish == '1' ? CHtml::image(Yii::app()->theme->baseUrl.'/images/icons/publish.png') : CHtml::image(Yii::app()->theme->baseUrl.'/images/icons/unpublish.png'),
+			'value'=>$this->quickAction(Yii::app()->controller->createUrl('publish', array('id'=>$model->search_id)), $model->publish),
 			//'value'=>$model->publish,
 		),
 		array(

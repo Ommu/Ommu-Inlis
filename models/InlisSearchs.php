@@ -251,7 +251,7 @@ class InlisSearchs extends CActiveRecord
 			if(!Yii::app()->getRequest()->getParam('type')) {
 				$this->defaultColumns[] = array(
 					'name' => 'publish',
-					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl("publish", array("id"=>$data->search_id)), $data->publish, 1)',
+					'value' => 'Utility::getPublish(Yii::app()->controller->createUrl(\'publish\', array(\'id\'=>$data->search_id)), $data->publish, 1)',
 					'htmlOptions' => array(
 						'class' => 'center',
 					),
@@ -261,7 +261,7 @@ class InlisSearchs extends CActiveRecord
 			}
 			$this->defaultColumns[] = array(
 				'name' => 'deleted_date',
-				'value' => '!in_array($data->deleted_date, array("0000-00-00 00:00:00","1970-01-01 00:00:00")) ? Yii::app()->dateFormatter->formatDateTime($data->deleted_date, \'medium\', false) : "-"',				
+				'value' => '!in_array($data->deleted_date, array("0000-00-00 00:00:00","1970-01-01 00:00:00")) ? Yii::app()->dateFormatter->formatDateTime($data->deleted_date, \'medium\', false) : \'-\'',
 				'htmlOptions' => array(
 					'class' => 'center',
 				),

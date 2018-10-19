@@ -14,7 +14,7 @@
 
 	$this->breadcrumbs=array(
 		'Inlis Worksheet Subs'=>array('manage'),
-		'Manage',
+		Yii::t('phrase', 'Manage'),
 	);
 	$this->menu=array(
 		array(

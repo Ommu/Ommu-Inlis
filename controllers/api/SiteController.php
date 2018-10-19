@@ -281,8 +281,8 @@ class SiteController extends ControllerApi
 					'edition'=>$model->Edition != null && $model->Edition != '' ? $model->Edition : '-',
 					'paging'=>$model->Paging != null && $model->Paging != '' ? $model->Paging : '-',
 					'sizes'=>$model->Sizes != null && $model->Sizes != '' ? $model->Sizes : '-',
-					'description'=>$model->Description != null && $model->Description != '' ? $model->Description : '-',	
-					'note'=>$model->Note != null && $model->Note != '' ? $model->Note : '-',	
+					'description'=>$model->Description != null && $model->Description != '' ? $model->Description : '-',
+					'note'=>$model->Note != null && $model->Note != '' ? $model->Note : '-',
 					'cover'=>$model->CoverURL != null && $model->CoverURL != '' ? (file_exists($cover) ? $cover : '-') : '-',
 					
 					'bookmark'=>InlisBookmarks::getBookmark($_POST, $model->ID, true),

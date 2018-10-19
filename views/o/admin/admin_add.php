@@ -15,7 +15,7 @@
 
 	$this->breadcrumbs=array(
 		'Inlis Catalogs'=>array('manage'),
-		'Create',
+		Yii::t('phrase', 'Create'),
 	);
 ?>
 

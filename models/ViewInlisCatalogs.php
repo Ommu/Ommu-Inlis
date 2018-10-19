@@ -105,8 +105,8 @@ class ViewInlisCatalogs extends CActiveRecord
 		return array(
 			'catalog_id' => Yii::t('attribute', 'Catalog'),
 			'bookmarks' => Yii::t('attribute', 'Bookmarks'),
-			'bookmark_unique' => Yii::t('attribute', 'Bookmark Unique'),	
-			'bookmark_all' => Yii::t('attribute', 'Bookmark All'),	
+			'bookmark_unique' => Yii::t('attribute', 'Bookmark Unique'),
+			'bookmark_all' => Yii::t('attribute', 'Bookmark All'),
 			'favourites' => Yii::t('attribute', 'Favourites'),
 			'favourite_unique' => Yii::t('attribute', 'Favourite Unique'),
 			'favourite_all' => Yii::t('attribute', 'Favourite All'),

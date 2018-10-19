@@ -157,7 +157,7 @@ class LoanController extends ControllerApi
 							'count'=>$item->loans,
 							'title'=>$title,
 							'author'=>$item->collection->catalog->Author != null && $item->collection->catalog->Author != '' ? $item->collection->catalog->Author : '-',
-							'publish_year'=>$item->collection->catalog->PublishYear != null && $item->collection->catalog->PublishYear != '' ? $item->collection->catalog->PublishYear : '-',							
+							'publish_year'=>$item->collection->catalog->PublishYear != null && $item->collection->catalog->PublishYear != '' ? $item->collection->catalog->PublishYear : '-',
 							'publisher'=>$item->collection->catalog->Publisher != null && $item->collection->catalog->Publisher != '' ? $item->collection->catalog->Publisher : '-',
 							'publish_location'=>$item->collection->catalog->PublishLocation != null && $item->collection->catalog->PublishLocation != '' ? $item->collection->catalog->PublishLocation : '-',
 							'subject'=>$item->collection->catalog->Subject != null && $item->collection->catalog->Subject != '' ? $item->collection->catalog->Subject : '-',
