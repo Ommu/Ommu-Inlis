@@ -5,7 +5,7 @@
  * @var $model InlisBookmarks
  * @var $form CActiveForm
  *
- * @author Putra Sudaryanto <putra@sudaryanto.id>
+ * @author Putra Sudaryanto <putra@ommu.co>
  * @contact (+62)856-299-4114
  * @copyright Copyright (c) 2016 Ommu Platform (www.ommu.co)
  * @created date 3 April 2016, 10:02 WIB
